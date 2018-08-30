@@ -12,3 +12,6 @@ Speedtest-history allows a user to view a history of speedtest.net results.
 - Pandas
 - Matplotlib
 - Speedtest-cli 
+- mpld3 
+- jinja2 
+

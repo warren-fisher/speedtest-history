@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt, mpld3
 import matplotlib.dates as mdates
 
 filename = './speedtest_cli/data.csv'
@@ -15,7 +15,10 @@ ax2.set_title("Time vs Upload speed / Mbps")
 
 fig.autofmt_xdate(rotation=90)
 
-plt.show()
+mpld3.show(fig)
+
+
+
 
 
 
