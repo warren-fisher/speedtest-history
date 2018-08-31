@@ -1,7 +1,7 @@
 import speedtest
 import pandas as pd
 
-filename = './speedtest_cli/data.csv'
+filename = './speedtest_data/data.csv'
 bit_to_megabit_ratio = 1048576**-1
 servers = []
 
