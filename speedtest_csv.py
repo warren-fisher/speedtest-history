@@ -2,11 +2,14 @@ import speedtest
 import pandas as pd
 
 filename = './speedtest_data/data.csv'
+port_num = 8888 
 bit_to_megabit_ratio = 1048576**-1
-servers = []
+# Insert a list of specific server IDs from http://www.speedtest.net/speedtest-servers-static.php to allow/block. 
+allowed_servers = []
+blocked_servers = []
 
 s = speedtest.Speedtest()
-s.get_servers(servers)
+s.get_servers(allowed_servers, blocked_servers)
 s.get_best_server()
 s.download()
 s.upload()
@@ -19,10 +22,8 @@ def remove_key(d, key):
 	return r
 	
 keys_to_remove = ['server','bytes_sent','bytes_received','share','client','ping']
-
 for key in keys_to_remove: 
 	results_dict = remove_key(results_dict, key)
-
 
 results_dict['download'] *= bit_to_megabit_ratio
 results_dict['upload'] *= bit_to_megabit_ratio
