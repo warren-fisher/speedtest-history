@@ -3,6 +3,8 @@ import pandas as pd
 
 filename = './speedtest_data/data.csv'
 port_num = 8888 
+automatic_browser_open = False
+use_web_view = False
 bit_to_megabit_ratio = 1048576**-1
 # Insert a list of specific server IDs from http://www.speedtest.net/speedtest-servers-static.php to allow/block. 
 allowed_servers = []

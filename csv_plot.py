@@ -2,8 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt, mpld3
 import matplotlib.dates as mdates
 
-from speedtest_csv import filename
-from speedtest_csv import port_num 
+from speedtest_csv import filename, port_num, automatic_browser_open, use_web_view
 
 df = pd.read_csv(filename, sep=',')
 
@@ -17,7 +16,10 @@ ax2.set_title("Time vs Upload speed / Mbps")
 
 fig.autofmt_xdate(rotation=90)
 
-mpld3.show(fig, port = port_num, open_browser = False)
+if use_web_view is True:  
+	mpld3.show(fig, port = port_num, open_browser = automatic_browser_open)
+else: 
+	plt.show()
 
 
 
