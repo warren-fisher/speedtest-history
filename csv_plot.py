@@ -2,7 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt, mpld3
 import matplotlib.dates as mdates
 
-filename = './speedtest_cli/data.csv'
+from speedtest_csv import filename
+
 df = pd.read_csv(filename, sep=',')
 
 fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(10,5))
