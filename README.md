@@ -9,6 +9,7 @@ Speedtest-history allows a user to view a history of speedtest.net results.
 - Create a web-based view for hosting on a Raspberry Pi or similar microcontroller
 - Optional automatic contacting to ISP or system admin
 - Better xaxis formatting
+- Choose a specific area code to limit speedtest servers to within a certain area 
 ### Dependancies 
 - Python 3
 - Pandas
