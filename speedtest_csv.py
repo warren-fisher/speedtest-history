@@ -1,6 +1,7 @@
 import speedtest
 import pandas as pd
 import os
+import datetime as dt
 
 dirname = './speedtest_data'
 filename = 'data.csv'
@@ -38,6 +39,7 @@ for key in keys_to_remove:
 
 results_dict['download'] *= bit_to_megabit_ratio
 results_dict['upload'] *= bit_to_megabit_ratio
+results_dict['timestamp'] = dt.date.strftime(dt.datetime.now(),'%M:%I%p-%d-%m-%Y')
 
 df_new = pd.DataFrame([results_dict])
 try:
