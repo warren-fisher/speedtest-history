@@ -8,7 +8,7 @@ filename = 'data.csv'
 file_path = dirname + '/' + filename
 port_num = 8888 
 automatic_browser_open = False
-use_web_view = False
+use_web_view = True
 bit_to_megabit_ratio = 1048576**-1
 # Insert a list of specific server IDs from http://www.speedtest.net/speedtest-servers-static.php to allow/block. 
 allowed_servers = []
@@ -40,7 +40,6 @@ def main():
 
 	results_dict['download'] *= bit_to_megabit_ratio
 	results_dict['upload'] *= bit_to_megabit_ratio
-	results_dict['timestamp'] = dt.date.strftime(dt.datetime.now(),'%M:%I%p-%d-%m-%Y')
 
 	df_new = pd.DataFrame([results_dict])
 	try:
