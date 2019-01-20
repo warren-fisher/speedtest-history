@@ -26,7 +26,6 @@ ax2.fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
 fig.autofmt_xdate(rotation=90)
 
 if use_web_view is True:
-	plt.show()
 	mpld3.show(fig, port = port_num, open_browser = automatic_browser_open)
 else: 
 	plt.show()
