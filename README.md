@@ -13,7 +13,6 @@ Speedtest-history allows a user to view a history of speedtest.net results.
 - Choose a specific area code to limit speedtest servers to within a certain area 
 - Create infrastructure for raspberry pi to be able to receive speedtest data from other devices
 	- Categorize data by device type, location, ethernet or not etc. 
-	
 ### Bugs to fix
 - Fix xaxis dates using incorrect timezones
 - Fix local web view dates overlapping

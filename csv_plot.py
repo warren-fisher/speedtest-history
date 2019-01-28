@@ -9,32 +9,19 @@ df['timestamp'] = pd.to_datetime(df['timestamp'])
 
 fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(10,5))
 
-ax1.plot(df['timestamp'],df['download'],'o-')
-ax1.set_title("Time vs. Download speed / Mbps")
-ax1.set(xlabel="Date", ylabel="Download speed / Mbps")
-ax1.set_ylim([0,1000])
-ax1.xaxis_date()
-ax1.fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
+def create_fig(ax, x, x_label, y, y_label):
+	ax.plot(x,y,'o-')
+	ax.set_title('{} vs {}'.format(y_label.capitalize(),x_label))
+	ax.set(xlabel=x_label,ylabel=y_label)
+	ax.xaxis_date()
+	ax.fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
 
-ax2.plot(df['timestamp'],df['upload'],'o-')
-ax2.set_title("Time vs Upload speed / Mbps")
-ax2.set(xlabel="Date", ylabel="Upload speed / Mbps")
-ax2.set_ylim([0,50])
-ax2.xaxis_date()
-ax2.fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
+ax1 = create_fig(ax1, df['timestamp'],'Date',df['download'],'Download speed / Mbps')
+ax2 = create_fig(ax2, df['timestamp'],'Date',df['upload'],'Upload speed / Mbps')
 
 fig.autofmt_xdate(rotation=90)
 
 if use_web_view is True:
-	plt.show()
 	mpld3.show(fig, port = port_num, open_browser = automatic_browser_open)
 else: 
 	plt.show()
-	
-
-
-
-
-
-
-

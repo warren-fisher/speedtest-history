@@ -9,7 +9,9 @@ file_path = dirname + '/' + filename
 port_num = 8888 
 automatic_browser_open = False
 use_web_view = True
+
 bit_to_megabit_ratio = 1048576**-1
+
 # Insert a list of specific server IDs from http://www.speedtest.net/speedtest-servers-static.php to allow/block. 
 allowed_servers = []
 blocked_servers = []
@@ -45,14 +47,11 @@ def main():
 	try:
 		df_old = pd.read_csv(file_path, sep=',') 
 		df_final = pd.concat([df_old, df_new], ignore_index = True) # ignore_index prevents an index output of 0, 1, 2, 0 which happens when concatenating two dataframes with index 0, 1, 2 and 0
-	except FileNotFoundError: # if a file is not found we want the dataframe to only consist of our latest data
+	except FileNotFoundError: # If a file is not found we create a new file / dir for our latest data
 		make_dir(dirname) 
 		df_final = df_new
 
 	df_final.to_csv(file_path, encoding='utf-8', index=False) # Our index does not matter at this point. It is easier to set the index as timestamp when displaying data
 
-	print(df_final)
-	
 if __name__=='__main__':
 	main()
-
