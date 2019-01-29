@@ -16,8 +16,8 @@ def create_fig(ax, x, x_label, y, y_label):
 	ax.xaxis_date()
 	ax.fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
 
-ax1 = create_fig(ax1, df['timestamp'],'Date',df['download'],'Download speed / Mbps')
-ax2 = create_fig(ax2, df['timestamp'],'Date',df['upload'],'Upload speed / Mbps')
+create_fig(ax1, df['timestamp'],'Date',df['download'],'Download speed / Mbps')
+create_fig(ax2, df['timestamp'],'Date',df['upload'],'Upload speed / Mbps')
 
 fig.autofmt_xdate(rotation=90)
 

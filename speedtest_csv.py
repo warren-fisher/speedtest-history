@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import datetime as dt
 
-dirname = './speedtest_data'
+dirname = 'F:/git/speedtest-history/speedtest_data' # If this is not the absolute path running the script from a bat file outside the directory will create a .csv in the wrong place
 filename = 'data.csv'
 file_path = dirname + '/' + filename
 port_num = 8888 
